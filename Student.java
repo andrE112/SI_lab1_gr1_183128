@@ -74,3 +74,37 @@ class Student {
 		}
 	}
 }
+class Course{
+	List<Student> students;
+
+	public Course(List<Student> students) {
+		this.students = students;
+	}
+
+	public List<Student> getStudents() {
+		return students;
+	}
+
+	public void setStudents(List<Student> students) {
+		this.students = students;
+	}
+
+	public int brojPotpisi(){
+		students = getStudents();
+		int counter=0;
+		for(Student i: students){
+			if(i.hasSignature()==true){
+				counter++;
+			}
+		}
+		return counter;
+	}
+	public void add(Student nov){
+		students=getStudents();
+		students.add(nov);
+	}
+	public void remove(Student nov){
+		students=getStudents();
+		students.remove(nov);
+	}
+}
